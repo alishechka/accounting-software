@@ -1,9 +1,10 @@
-package Accounting;
+package com.accounting;
 
-public class LedgerAccount implements ledgerInterface {
+public class Bank implements ledgerInterface {
 
     String name;
     int balance;
+
 
     public int getBalance() {
         return balance;
@@ -13,22 +14,23 @@ public class LedgerAccount implements ledgerInterface {
         this.balance = balance;
     }
 
-    @Override
+//    @Override
     public void accountName(String name) {
         this.name = name;
 
     }
 
-    @Override
-    public void transaction(Integer amount) {
-        this.balance = balance + amount;
+//    @Override
+    public  void  transaction(Integer amount) {
+        this.balance =balance+amount*-1;
     }
+
+
 
     @Override
     public String toString() {
-        return "Accounting.LedgerAccount{" +
+        return "Accounting.Bank{" +
                 "name='" + name + '\'' +
-                ", balance=" + balance +
                 '}';
     }
 }

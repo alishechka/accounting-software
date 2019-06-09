@@ -1,17 +1,6 @@
-package Accounting;
-
-import java.util.HashMap;
-import java.util.List;
+package com.accounting;
 
 public interface ledgerInterface {
-
-
-
-
-
-
   void accountName(String name);
   void transaction(Integer amount);
-
-
 }

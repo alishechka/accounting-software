@@ -1,4 +1,7 @@
-package Accounting;
+package com.accounting;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.*;
 import java.io.*;
@@ -6,7 +9,7 @@ import java.io.*;
 public class Application {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         Bank bank = new Bank();
         bank.accountName("fff");
         bank.setBalance(100);
@@ -126,6 +129,7 @@ public class Application {
                     break;
             }
         } while (!quit);
+
 
 
     }

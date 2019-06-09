@@ -1,4 +1,4 @@
-package Accounting;
+package com.accounting;
 
 public class transaction {
 
