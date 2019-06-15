@@ -1,10 +1,24 @@
 package com.accounting;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 public class Bank implements ledgerInterface {
 
-    String name;
-    int balance;
+    private String name;
+    private int balance;
+    private int deduct;
 
+    public int getDeduct() {
+        return deduct;
+    }
+
+    public void setDeduct(int deduct) {
+        this.deduct = deduct;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public int getBalance() {
         return balance;
@@ -14,23 +28,24 @@ public class Bank implements ledgerInterface {
         this.balance = balance;
     }
 
-//    @Override
-    public void accountName(String name) {
+    //    @Override
+    public void setName(String name) {
         this.name = name;
 
     }
 
-//    @Override
-    public  void  transaction(Integer amount) {
-        this.balance =balance+amount*-1;
+    //    @Override
+    public void transaction(Integer amount) {
+        this.balance = balance + amount * -1;
     }
-
 
 
     @Override
     public String toString() {
-        return "Accounting.Bank{" +
+        return "Bank{" +
                 "name='" + name + '\'' +
+                ", balance=" + balance +
+                ", deduct=" + deduct +
                 '}';
     }
 }

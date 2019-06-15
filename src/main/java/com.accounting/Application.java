@@ -1,28 +1,33 @@
 package com.accounting;
 
+import com.accounting.utils.JsonUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.*;
-import java.io.*;
 
 public class Application {
 
 
     public static void main(String[] args) throws JsonProcessingException {
+
+
         Bank bank = new Bank();
-        bank.accountName("fff");
+        bank.setName("HSBC");
         bank.setBalance(100);
+        String bb=JsonUtil.convertJavaToJson(bank);
+        System.out.println(bb);
+
+
 //        LedgerAccount supplier = new LedgerAccount();
 //        LedgerAccount taxes = new LedgerAccount();
 //        LedgerAccount rent = new LedgerAccount();
 //        LedgerAccount travel = new LedgerAccount();
 //        LedgerAccount rates = new LedgerAccount();
-//        supplier.accountName("Salaries");
-//        taxes.accountName("taxes");
-//        rent.accountName("rent");
-//        travel.accountName("travel");
-//        rates.accountName("rates");
+//        supplier.setName("Salaries");
+//        taxes.setName("taxes");
+//        rent.setName("rent");
+//        travel.setName("travel");
+//        rates.setName("rates");
 //        System.out.println(bank.getBalance());
 //
 //
@@ -52,92 +57,89 @@ public class Application {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-        Scanner sc = new Scanner(System.in);
-        Map<String, LedgerAccount> ledgerMap = new HashMap<>();
-
-        boolean quit = false;
-
-
-        do {
-            System.out.println("chose option");
-            System.out.println("0 - quit ");
-            System.out.println("1 - new payee");
-            System.out.println("2 - make a payment");
-            System.out.println("3 - see reports");
-            System.out.println("4 - search");
-            int x = sc.nextInt();
-            LedgerAccount ledgerAccount = new LedgerAccount();
-
-            switch (x) {
-                case 1:
-                    System.out.println("name of payee");
-                    String name = sc.next();
-                    ledgerAccount.accountName(name);
-                    ledgerMap.put(name.toUpperCase(), ledgerAccount);
-                    for (Map.Entry<String, LedgerAccount> pair : ledgerMap.entrySet()) {
-                        System.out.println(pair.getKey() + " " + pair.getValue());
-                    }
-                    break;
-                case 2:
-                    System.out.println("Enter date ");
-                    String date = sc.next();
-                    System.out.println("Enter externalRef ");
-                    String externalRef = sc.next();
-                    System.out.println("Enter notes ");
-                    String notes = sc.next();
-                    System.out.println("enter sum");
-                    int sum = sc.nextInt();
-                    System.out.println("which company?");
-                    String tempLedger = sc.next().toUpperCase();
-                    if (ledgerMap.containsKey(tempLedger)) {
-                        ledgerAccount = ledgerMap.get(tempLedger);
-                    }
-                    transRecorder.put(internalRef++, billOfTransaction(date, externalRef, notes, sum, ledgerAccount, bank));
-                    for (Map.Entry<Integer, transaction> pair : transRecorder.entrySet()) {
-                        System.out.println(pair.getKey() + " " + pair.getValue());
-                    }
-                    break;
-                case 3:
-                    System.out.println("option2");
-                    for (Map.Entry<String, LedgerAccount> pair : ledgerMap.entrySet()) {
-                        System.out.println(pair.getKey() + pair.getValue());
-                    }
-                    for (Map.Entry<Integer, transaction> pair : transRecorder.entrySet()) {
-                        System.out.println(pair.getKey() + " " + pair.getValue());
-                    }
-                    break;
-                case 4:
-                    System.out.println("Please type reference");
-                    String search = sc.next();
-
-                    for (Map.Entry<Integer, transaction> i : transRecorder.entrySet()) {
-                        if (i.getValue().externalRef.equals(search)) {
-                            System.out.println("matched here");
-                            System.out.println(i.getKey() + " " + i.getValue());
-                        } else {
-                            System.out.println("nothing");
-                        }
-                    }
-                    System.out.println("lol");
-
-
-
-
-                    break;
-                case 0:
-                    quit = true;
-                    break;
-            }
-        } while (!quit);
-
-
-
-    }
-
-    public static transaction billOfTransaction(String date, String externalRef, String notes, int sum, LedgerAccount ledgerAccount, Bank bank) {
-        transaction trans = new transaction(date, externalRef, notes, sum, ledgerAccount, bank);
-
-        return trans;
+//        Scanner sc = new Scanner(System.in);
+//        Map<String, LedgerAccount> ledgerMap = new HashMap<>();
+//
+//        boolean quit = false;
+//
+//
+//        do {
+//            System.out.println("chose option");
+//            System.out.println("0 - quit ");
+//            System.out.println("1 - new payee");
+//            System.out.println("2 - make a payment");
+//            System.out.println("3 - see reports");
+//            System.out.println("4 - search");
+//            int x = sc.nextInt();
+//            LedgerAccount ledgerAccount = new LedgerAccount();
+//
+//            switch (x) {
+//                case 1:
+//                    System.out.println("name of payee");
+//                    String name = sc.next();
+//                    ledgerAccount.setName(name);
+//                    ledgerMap.put(name.toUpperCase(), ledgerAccount);
+//                    for (Map.Entry<String, LedgerAccount> pair : ledgerMap.entrySet()) {
+//                        System.out.println(pair.getKey() + " " + pair.getValue());
+//                    }
+//                    break;
+//                case 2:
+//                    System.out.println("Enter date ");
+//                    String date = sc.next();
+//                    System.out.println("Enter externalRef ");
+//                    String externalRef = sc.next();
+//                    System.out.println("Enter notes ");
+//                    String notes = sc.next();
+//                    System.out.println("enter sum");
+//                    int sum = sc.nextInt();
+//                    System.out.println("which company?");
+//                    String tempLedger = sc.next().toUpperCase();
+//                    if (ledgerMap.containsKey(tempLedger)) {
+//                        ledgerAccount = ledgerMap.get(tempLedger);
+//                    }
+//                    transRecorder.put(internalRef++, billOfTransaction(date, externalRef, notes, sum, ledgerAccount, bank));
+//                    for (Map.Entry<Integer, transaction> pair : transRecorder.entrySet()) {
+//                        System.out.println(pair.getKey() + " " + pair.getValue());
+//                    }
+//                    break;
+//                case 3:
+//                    System.out.println("option2");
+//                    for (Map.Entry<String, LedgerAccount> pair : ledgerMap.entrySet()) {
+//                        System.out.println(pair.getKey() + pair.getValue());
+//                    }
+//                    for (Map.Entry<Integer, transaction> pair : transRecorder.entrySet()) {
+//                        System.out.println(pair.getKey() + " " + pair.getValue());
+//                    }
+//                    break;
+//                case 4:
+//                    System.out.println("Please type reference");
+//                    String search = sc.next();
+//
+//                    for (Map.Entry<Integer, transaction> i : transRecorder.entrySet()) {
+//                        if (i.getValue().externalRef.equals(search)) {
+//                            System.out.println("matched here");
+//                            System.out.println(i.getKey() + " " + i.getValue());
+//                        } else {
+//                            System.out.println("nothing");
+//                        }
+//                    }
+//                    System.out.println("lol");
+//
+//
+//                    break;
+//                case 0:
+//                    quit = true;
+//                    break;
+//            }
+//        } while (!quit);
+//
+//
+//    }
+//
+//    public static transaction billOfTransaction(String date, String externalRef, String notes, int sum, LedgerAccount ledgerAccount, Bank bank) {
+//        transaction trans = new transaction(date, externalRef, notes, sum, ledgerAccount, bank);
+//
+//        return trans;
     }
 
 
