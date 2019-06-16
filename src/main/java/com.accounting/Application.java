@@ -95,7 +95,7 @@ public class Application {
 //                    System.out.println("which company?");
 //                    String tempLedger = sc.next().toUpperCase();
 //                    if (ledgerMap.containsKey(tempLedger)) {
-//                        ledgerAccount = ledgerMap.get(tempLedger);
+//                        ledgerAccount = ledgerMap.load(tempLedger);
 //                    }
 //                    transRecorder.put(internalRef++, billOfTransaction(date, externalRef, notes, sum, ledgerAccount, bank));
 //                    for (Map.Entry<Integer, transaction> pair : transRecorder.entrySet()) {

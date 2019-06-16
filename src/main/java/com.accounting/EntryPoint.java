@@ -1,11 +1,10 @@
 package com.accounting;
 
-import com.accounting.utils.JsonUtil;
+import com.accounting.dao.Account;
+import com.accounting.dao.MyDynomoDB;
 import com.accounting.utils.Test3;
 import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
 import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
-
-import java.util.*;
 
 public class EntryPoint {
 
@@ -44,15 +43,24 @@ public class EntryPoint {
 //        response3.setStatusCode(201);
 //        response3.setBody(responseBody3);
 //        System.out.println("test text");
+        Account account = new Account();
+        account.setId("XYZ");
+        account.setSum(10000);
+        account.setNewAttribute(123);
+        MyDynomoDB myDynomoDB = new MyDynomoDB();
+        myDynomoDB.save(account);
 
+//        Account account1 = myDynomoDB.load(account);
+//
+//        System.out.println("account1: " + account1);
 
-        String body = request.getBody();
-        AppTransaction appTransaction = JsonUtil.convertJsonToJava(body,AppTransaction.class);
-        Bank bank=appTransaction.getBank();
+//        String body = request.getBody();
+//        AppTransaction appTransaction = JsonUtil.convertJsonToJava(body, AppTransaction.class);
+//        Bank bank = appTransaction.getBank();
         AwsProxyResponse response = new AwsProxyResponse();
-        String responseBody = JsonUtil.convertJavaToJson(bank);
+//        String responseBody = JsonUtil.convertJavaToJson(bank);
         response.setStatusCode(202);
-        response.setBody(responseBody);
+//        response.setBody(responseBody);
         return response;
 
     }
@@ -66,14 +74,6 @@ public class EntryPoint {
         String i = test3.getName() + test3.getSurname() + test3.getId();
 
         return i;
-    }
-
-    private AppTransaction compute(AppTransaction appTransaction) {
-        Bank bank = appTransaction.getBank();
-        LedgerAccount ledgerAccount = appTransaction.getLedgerAccount();
-        bank.setBalance(bank.getBalance() + appTransaction.getSum());
-        ledgerAccount.setBalance(ledgerAccount.getBalance() - appTransaction.getSum());
-        return null;
     }
 
 
