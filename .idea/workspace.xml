@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d6f57c4-63b2-4489-ab72-8ed72b972922" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.accounting/dao/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.accounting/dao/MyDynomoDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/com.accountingSoftware.iml" beforeDir="false" afterPath="$PROJECT_DIR$/com.accountingSoftware.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.accounting/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.accounting/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.accounting/EntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.accounting/EntryPoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.accounting/dao/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.accounting/dao/Account.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,8 +36,8 @@
       <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.accounting/dao/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            <state relative-caret-position="999">
+              <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#123#124#0" expanded="true" />
@@ -52,9 +48,17 @@
                 <element signature="e#265#266#0" expanded="true" />
                 <element signature="e#300#301#0" expanded="true" />
                 <element signature="e#330#331#0" expanded="true" />
+                <element signature="e#727#728#0" expanded="true" />
                 <element signature="e#762#763#0" expanded="true" />
                 <element signature="e#815#816#0" expanded="true" />
                 <element signature="e#863#864#0" expanded="true" />
+                <element signature="e#1008#1009#0" expanded="true" />
+                <element signature="e#1048#1049#0" expanded="true" />
+                <element signature="e#1080#1081#0" expanded="true" />
+                <element signature="e#1111#1112#0" expanded="true" />
+                <element signature="e#1138#1139#0" expanded="true" />
+                <element signature="e#1178#1179#0" expanded="true" />
+                <element signature="e#1210#1211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +67,8 @@
       <file leaf-file-name="EntryPoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.accounting/EntryPoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+            <state relative-caret-position="375">
+              <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -425,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560700440135</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="after JSON test">
+      <created>1560704880094</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1560704880094</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -440,6 +451,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49837837" weight="0.329602" />
@@ -448,9 +460,9 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50054055" side_tool="true" weight="0.4664179" />
-      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.14540541" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="3" visible="true" weight="0.14540541" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49945945" visible="true" weight="0.3258427" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49945945" weight="0.3258427" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32958803" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
@@ -935,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.accounting/dao/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="999">
+          <caret line="44" column="29" selection-start-line="44" selection-start-column="29" selection-end-line="44" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#123#124#0" expanded="true" />
@@ -947,17 +959,25 @@
             <element signature="e#265#266#0" expanded="true" />
             <element signature="e#300#301#0" expanded="true" />
             <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
             <element signature="e#762#763#0" expanded="true" />
             <element signature="e#815#816#0" expanded="true" />
             <element signature="e#863#864#0" expanded="true" />
+            <element signature="e#1008#1009#0" expanded="true" />
+            <element signature="e#1048#1049#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1111#1112#0" expanded="true" />
+            <element signature="e#1138#1139#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.accounting/EntryPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+        <state relative-caret-position="375">
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

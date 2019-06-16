@@ -47,6 +47,8 @@ public class EntryPoint {
         account.setId("XYZ");
         account.setSum(10000);
         account.setNewAttribute(123);
+        account.setCity("London");
+        account.setName("no name");
         MyDynomoDB myDynomoDB = new MyDynomoDB();
         myDynomoDB.save(account);
 
