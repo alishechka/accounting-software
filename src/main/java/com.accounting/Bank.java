@@ -6,15 +6,8 @@ public class Bank implements ledgerInterface {
 
     private String name;
     private int balance;
-    private int deduct;
 
-    public int getDeduct() {
-        return deduct;
-    }
 
-    public void setDeduct(int deduct) {
-        this.deduct = deduct;
-    }
 
     public String getName() {
         return name;
@@ -45,7 +38,6 @@ public class Bank implements ledgerInterface {
         return "Bank{" +
                 "name='" + name + '\'' +
                 ", balance=" + balance +
-                ", deduct=" + deduct +
                 '}';
     }
 }

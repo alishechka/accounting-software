@@ -28,7 +28,7 @@ public class Application {
 //        rent.setName("rent");
 //        travel.setName("travel");
 //        rates.setName("rates");
-//        System.out.println(bank.getBalance());
+//        System.out.println(bank.getBalanceCalc());
 //
 //
         List<LedgerAccount> ledgerList = new ArrayList<>();
@@ -51,7 +51,7 @@ public class Application {
 //        transRecorder.put(internalRef++, billOfTransaction("01/02/19", "7894", "nothing", -560, rates, bank));
 //
 //        for (LedgerAccount i : ledgerList) {
-//            System.out.println(i.name + " current balance is £" + i.getBalance());
+//            System.out.println(i.name + " current balance is £" + i.getBalanceCalc());
 //        }
 //        System.out.println(transRecorder.keySet());
 

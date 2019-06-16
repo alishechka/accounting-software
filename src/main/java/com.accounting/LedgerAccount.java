@@ -2,8 +2,8 @@ package com.accounting;
 
 public class LedgerAccount implements ledgerInterface {
 
-    String name;
-    int balance;
+    private String name;
+    private int balance;
 
     public int getBalance() {
         return balance;

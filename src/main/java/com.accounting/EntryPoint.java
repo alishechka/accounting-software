@@ -22,7 +22,7 @@ public class EntryPoint {
 //        Calendar date = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
 //        String time = date.getTime().toString();
 //        int ii = decuctBalance(bank);
-//        responseDto.setCurrentBalance(bank.getBalance());
+//        responseDto.setCurrentBalance(bank.getBalanceCalc());
 //        responseDto.setBalanceNextMonth(ii);
 //        responseDto.setDate(time);
 
@@ -45,25 +45,18 @@ public class EntryPoint {
 //        response3.setBody(responseBody3);
 //        System.out.println("test text");
 
-        String body = request.getBody();
-        Test3 test3 = JsonUtil.convertJsonToJava(body, Test3.class);
-        Test4 test4 = new Test4();
-        String ii = listMaker(test3);
-        test4.setInfoAsString(ii);
 
+        String body = request.getBody();
+        AppTransaction appTransaction = JsonUtil.convertJsonToJava(body,AppTransaction.class);
+        Bank bank=appTransaction.getBank();
         AwsProxyResponse response = new AwsProxyResponse();
-        String responseBody = JsonUtil.convertJavaToJson(test4);
-        response.setStatusCode(303);
+        String responseBody = JsonUtil.convertJavaToJson(bank);
+        response.setStatusCode(202);
         response.setBody(responseBody);
-        System.out.println("it worked");
         return response;
 
-
     }
 
-    private int decuctBalance(Bank bank) {
-        return bank.getBalance() - bank.getDeduct();
-    }
 
     private String aToB(A a) {
         return a.getA() + " is cool";
@@ -74,5 +67,14 @@ public class EntryPoint {
 
         return i;
     }
+
+    private AppTransaction compute(AppTransaction appTransaction) {
+        Bank bank = appTransaction.getBank();
+        LedgerAccount ledgerAccount = appTransaction.getLedgerAccount();
+        bank.setBalance(bank.getBalance() + appTransaction.getSum());
+        ledgerAccount.setBalance(ledgerAccount.getBalance() - appTransaction.getSum());
+        return null;
+    }
+
 
 }
