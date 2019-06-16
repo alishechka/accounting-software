@@ -2,9 +2,12 @@ package com.accounting;
 
 import com.accounting.dao.Account;
 import com.accounting.dao.MyDynomoDB;
+import com.accounting.utils.JsonUtil;
 import com.accounting.utils.Test3;
 import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
 import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
+
+import java.util.List;
 
 public class EntryPoint {
 
@@ -43,14 +46,27 @@ public class EntryPoint {
 //        response3.setStatusCode(201);
 //        response3.setBody(responseBody3);
 //        System.out.println("test text");
-        Account account = new Account();
-        account.setId("XYZ");
-        account.setSum(10000);
-        account.setNewAttribute(123);
-        account.setCity("London");
-        account.setName("no name");
+
+        String body = request.getBody();
+        JsonListToList jsonListToList=JsonUtil.convertJsonToJava(body,JsonListToList.class);
         MyDynomoDB myDynomoDB = new MyDynomoDB();
-        myDynomoDB.save(account);
+        List<Account> accounts = jsonListToList.getjList();
+
+        for (Account account : accounts) {
+            myDynomoDB.save(account);
+
+        }
+
+
+//
+//        Account account = new Account();
+//        account.setId("XYZ");
+//        account.setSum(10000);
+//        account.setNewAttribute(123);
+//        account.setCity("London");
+//        account.setName("no name");
+//        MyDynomoDB myDynomoDB = new MyDynomoDB();
+//        myDynomoDB.save(account);
 
 //        Account account1 = myDynomoDB.load(account);
 //
