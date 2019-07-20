@@ -7,54 +7,36 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 @DynamoDBTable(tableName = "ali-table")
 public class Account {
 
-    @DynamoDBHashKey
-    private String id;
+    @DynamoDBHashKey(attributeName = "id")
+    private String email;
     @DynamoDBAttribute
-    private int sum;
+    private String firstName;
     @DynamoDBAttribute
-    private int newAttribute;
-    @DynamoDBAttribute
-    private String city;
-    @DynamoDBAttribute
-    private String name;
+    private String lastName;
 
-    public String getId() {
-        return id;
+
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getSum() {
-        return sum;
+
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSum(int sum) {
-        this.sum = sum;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public int getNewAttribute() {
-        return newAttribute;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setNewAttribute(int newAttribute) {
-        this.newAttribute = newAttribute;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 }

@@ -23,11 +23,11 @@ public class Application {
 //        LedgerAccount rent = new LedgerAccount();
 //        LedgerAccount travel = new LedgerAccount();
 //        LedgerAccount rates = new LedgerAccount();
-//        supplier.setName("Salaries");
-//        taxes.setName("taxes");
-//        rent.setName("rent");
-//        travel.setName("travel");
-//        rates.setName("rates");
+//        supplier.setFirstName("Salaries");
+//        taxes.setFirstName("taxes");
+//        rent.setFirstName("rent");
+//        travel.setFirstName("travel");
+//        rates.setFirstName("rates");
 //        System.out.println(bank.getBalanceCalc());
 //
 //
@@ -77,7 +77,7 @@ public class Application {
 //                case 1:
 //                    System.out.println("name of payee");
 //                    String name = sc.next();
-//                    ledgerAccount.setName(name);
+//                    ledgerAccount.setFirstName(name);
 //                    ledgerMap.put(name.toUpperCase(), ledgerAccount);
 //                    for (Map.Entry<String, LedgerAccount> pair : ledgerMap.entrySet()) {
 //                        System.out.println(pair.getKey() + " " + pair.getValue());
