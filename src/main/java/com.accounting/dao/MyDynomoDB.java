@@ -20,4 +20,10 @@ public class MyDynomoDB {
     public Account load(Account account) {
         return dynamoDBMapper.load(account);
     }
+
+    public Account load(String email) {
+        Account account = new Account();
+        account.setEmail(email);
+        return dynamoDBMapper.load(account);
+    }
 }
