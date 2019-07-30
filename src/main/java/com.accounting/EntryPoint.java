@@ -44,13 +44,17 @@ public class EntryPoint {
         Account account = myDynomoDB.load(email);
 
         Map<String, String> headers = headersMap();
-
-
-        String body = JsonUtil.convertJavaToJson(account);
         AwsProxyResponse response = new AwsProxyResponse();
-        response.setStatusCode(202);
+
+        if(account==null){
+            response.setStatusCode(402);
+        } else {
+            response.setStatusCode(202);
+            String body = JsonUtil.convertJavaToJson(account);
+            response.setBody(body);
+        }
         response.setHeaders(headers);
-        response.setBody(body);
+
 
         return response;
     }
