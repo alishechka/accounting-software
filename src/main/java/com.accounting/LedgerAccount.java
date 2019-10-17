@@ -1,9 +1,9 @@
-package Accounting;
+package com.accounting;
 
 public class LedgerAccount implements ledgerInterface {
 
-    String name;
-    int balance;
+    private String name;
+    private int balance;
 
     public int getBalance() {
         return balance;
@@ -14,7 +14,7 @@ public class LedgerAccount implements ledgerInterface {
     }
 
     @Override
-    public void accountName(String name) {
+    public void setName(String name) {
         this.name = name;
 
     }
